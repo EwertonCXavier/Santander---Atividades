@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Simples</title>
+</head>
+<body>
+    <main></main>
+    <script>
+        let books_array = [];
+        const API_URL = 'http://localhost:3000/books';
+        // Função criada para pegar os dados da "API" criada com JSON Server
+
+        const getAll = async() => {
+            books_array = [];
+            const response = await fetch(API_URL)
+            const data = await response.json();
+            getData(data);
+            return data;
+        }
+
+        function getData(object) {
+            let obj = {}
+            books_array = [];
+            object.map(data => {
+                books_array.push(data);
+            })
+        }
+
+        async function objectWithThis() {
+            getAll().then(data => {
+                obj = {
+                    ...books_array,
+                    printedTitle: function() {
+                        console.log(this.title);
+                    }
+                }
+                console.log("The object with ´this´ is equivalent to: ", obj)
+            })
+        }
+        objectWithThis();
+        // Função para somar os preços dos livros
+        async function sumAllBooks() {
+            getAll().then(data => {
+                console.log("This is the list of all available books: \n\n", console.table(books_array));
+                const soma = books_array.reduce((acc, book) => {
+                    return acc += book.price
+                }, 0);
+                console.log("The books prices sum is equivalent to: R$", soma);
+            })          
+        }
+        sumAllBooks();
+
+        async function filterData(data){
+            let array = []
+            getAll().then(data => {
+                console.log("Titles with less than 10 copies available (Filter)")
+                data.filter(books => books.qty_available <= 10 && array.push(books))
+                console.log(array);
+            })
+        }
+        filterData();
+        // It calculates if the books in under discount or not
+        async function enableDiscount() {
+            getAll().then(data => {
+                // Adiciona uma propriedade relacionada a desconto dos itens
+                books_array.forEach((book, index) => book.price < 50 ? (
+                    books_array[index] = {
+                        ...books_array[index],
+                        "discount": true
+                    })
+                    : (
+                        books_array[index] = {
+                        ...books_array[index],
+                        "discount": false
+                    }) 
+                )
+                console.log("The object with new attribute (discount) is ", books_array)
+            })
+        }
+        enableDiscount();
+
+        async function checkWithPrototype(){
+            getAll().then(data => {
+                Array.prototype.findDiscount = function(books_array) {
+                    books_array.filter(book => {
+                        book.price < 50 &&
+                        console.log(`The book with title: ${book.title} is on discount and it costs R$ ${book.price},00 `);
+                    })
+                }
+                books_array.findDiscount(books_array)
+            })
+        }
+        checkWithPrototype();
+
+        async function recursiveFunction() {
+            getAll().then(data => {
+                let soma = 0;
+                function sumItems(index) {
+                    if(index < 0 ){ // Se o indice for menor que 0 (não existe), imprime
+                        console.log("The sum of all books in stock is: R$", soma);
+                        return 1;
+                    }
+                    else {
+                        soma += books_array[index].price;
+                        sumItems(index - 1);
+                        return;
+                    }
+                }
+                sumItems(books_array.length - 1);
+            })
+        }
+        recursiveFunction();
+    </script>
+</body>
+</html>

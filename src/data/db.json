@@ -1,0 +1,124 @@
+{
+    "books": [
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 32,
+            "qty_available": 5
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 6
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 45,
+            "qty_available": 7
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 8
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 9
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 10
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 11
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 12
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 13
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 14
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 15
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 16
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 17
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 18
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 19
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 20
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 21
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 22
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 23
+        },
+        {
+            "title": "How to Win Friends & Influence People",
+            "image": "../../assets/how-to-win-friends-cover.jpg",
+            "price": 54,
+            "qty_available": 24
+        }
+    ]
+}
