@@ -6,10 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Ewerton C. Xavier",
   "license": "ISC",
   "devDependencies": {
     "axios": "^0.22.0",
     "json-server": "^0.17.0"
+  },
+  "dependencies": {
+    "sass": "^1.42.1"
   }
 }

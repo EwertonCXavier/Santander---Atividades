@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Catálogo Simples</title>
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main></main>
+    <main>
+        <header>
+            <span>Interface para a atividade 04</span>
+        </header>
+        <section class="container-functions">
+            <div class="container-content--info">
+                <span class="header">Itens Obrigatórios</span>
+                <div class="content">
+                    <span class="clickable" onclick="mapUse()">Uso do Map</span>
+                    <span class="clickable" onclick="filterData()">Uso do Filter</span>
+                    <span class="clickable" onclick="sumAllBooks()">Uso do Reduce</span>
+                    <span class="clickable" onclick="objectWithThis()">Uso do This/Spread</span>
+                </div>
+            </div>
+            <div class="container-content--info">
+                <span class="header">Itens Extras</span>
+                <div class="content">
+                    <span class="clickable" onclick="sumAllBooks()">Impressão Bonita</span>
+                    <span class="clickable" onclick="recursiveFunction()">Função recursiva</span>
+                    <span class="clickable" onclick="checkWithPrototype()">Uso do Prototype</span>
+                    <span class="clickable" onclick="enableDiscount()">Uso da HOF</span>
+                </div>
+            </div>
+        </section>
+        <button onclick="clearConsole()">Limpar Console</button>
+    </main>
     <script>
         let books_array = [];
         const API_URL = 'http://localhost:3000/books';
@@ -29,6 +59,16 @@
             })
         }
 
+        function clearConsole() {
+            console.clear();
+        }
+
+        async function mapUse() {
+            getAll().then(data => {
+                data.map(books => console.log(books))
+            })
+        }
+
         async function objectWithThis() {
             getAll().then(data => {
                 obj = {
@@ -40,7 +80,6 @@
                 console.log("The object with ´this´ is equivalent to: ", obj)
             })
         }
-        objectWithThis();
         // Função para somar os preços dos livros
         async function sumAllBooks() {
             getAll().then(data => {
@@ -51,7 +90,6 @@
                 console.log("The books prices sum is equivalent to: R$", soma);
             })          
         }
-        sumAllBooks();
 
         async function filterData(data){
             let array = []
@@ -61,7 +99,6 @@
                 console.log(array);
             })
         }
-        filterData();
         // It calculates if the books in under discount or not
         async function enableDiscount() {
             getAll().then(data => {
@@ -80,7 +117,6 @@
                 console.log("The object with new attribute (discount) is ", books_array)
             })
         }
-        enableDiscount();
 
         async function checkWithPrototype(){
             getAll().then(data => {
@@ -93,7 +129,6 @@
                 books_array.findDiscount(books_array)
             })
         }
-        checkWithPrototype();
 
         async function recursiveFunction() {
             getAll().then(data => {
@@ -112,7 +147,6 @@
                 sumItems(books_array.length - 1);
             })
         }
-        recursiveFunction();
     </script>
 </body>
 </html>
